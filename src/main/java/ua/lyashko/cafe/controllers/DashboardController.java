@@ -29,4 +29,13 @@ public class DashboardController {
         log.info ( "dashboard model logged" );
         return "dashboard";
     }
+
+    @GetMapping("/")
+    public String start ( Model model ) {
+        model.addAttribute ( "categories" , categoryService.getAllCategories ( ).size ( ) );
+        model.addAttribute ( "products" , productService.getAllProducts ( ).size ( ) );
+        model.addAttribute ( "bills" , billService.getALlBills ( ).size ( ) );
+        log.info ( "dashboard model logged" );
+        return "dashboard";
+    }
 }
