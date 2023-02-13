@@ -1,43 +1,43 @@
-2023-02-13 22:41:29,293 INFO o.s.b.StartupInfoLogger [main] Starting CategoryTest using Java 17.0.1 with PID 18780 (started by maksimlasko in /Users/maksimlasko/Desktop/Java/cafe-manager)
-2023-02-13 22:41:29,301 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.0.2, Spring v6.0.4
-2023-02-13 22:41:29,303 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-02-13 22:41:29,817 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-02-13 22:41:29,873 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
-2023-02-13 22:41:30,225 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-02-13 22:41:30,266 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.1.6.Final
-2023-02-13 22:41:30,386 WARN o.h.b.i.MetadataBuilderImpl$MetadataBuildingOptionsImpl [main] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-2023-02-13 22:41:30,516 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-02-13 22:41:30,588 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.mariadb.jdbc.Connection@50778bde
-2023-02-13 22:41:30,590 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-02-13 22:41:30,613 INFO o.h.e.j.d.i.DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
-2023-02-13 22:41:31,254 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-02-13 22:41:31,261 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-02-13 22:41:31,555 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-02-13 22:41:31,879 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
-2023-02-13 22:41:31,879 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
-2023-02-13 22:41:31,882 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 1 ms
-2023-02-13 22:41:31,899 INFO o.s.b.StartupInfoLogger [main] Started CategoryTest in 2.86 seconds (process running for 3.725)
-2023-02-13 22:41:32,073 INFO u.l.c.c.CategoryController [main] category model logged
-2023-02-13 22:41:32,445 INFO u.l.c.c.CategoryController [main] category list logged: [latte]
-2023-02-13 22:41:32,510 INFO u.l.c.c.CategoryController [main] category deleted by id: 1
-2023-02-13 22:41:32,526 INFO u.l.c.c.CategoryController [main] category edit logged
-2023-02-13 22:41:32,541 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [ua.lyashko.cafe.DashboardTest]: DashboardTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-02-13 22:41:32,543 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration ua.lyashko.cafe.CafeApplication for test class ua.lyashko.cafe.DashboardTest
-2023-02-13 22:41:32,565 INFO u.l.c.c.DashboardController [main] dashboard model logged
-2023-02-13 22:41:32,580 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [ua.lyashko.cafe.ProductTest]: ProductTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-02-13 22:41:32,583 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration ua.lyashko.cafe.CafeApplication for test class ua.lyashko.cafe.ProductTest
-2023-02-13 22:41:32,621 INFO u.l.c.c.ProductController [main] product edit logged
-2023-02-13 22:41:32,660 INFO u.l.c.c.ProductController [main] product list logged: [Product(id=1, name=best latte, price=1.00)]
-2023-02-13 22:41:32,697 INFO u.l.c.c.ProductController [main] product deleted by id: 1
-2023-02-13 22:41:32,712 INFO u.l.c.c.ProductController [main] product model logged
-2023-02-13 22:41:32,732 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [ua.lyashko.cafe.BillTest]: BillTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-02-13 22:41:32,735 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration ua.lyashko.cafe.CafeApplication for test class ua.lyashko.cafe.BillTest
-2023-02-13 22:41:32,750 INFO u.l.c.c.BillController [main] bill deleted by id: 1
-2023-02-13 22:41:32,889 INFO u.l.c.c.BillController [main] bill exported: Bill(id=1, date=, totalPrice=0.00)
-2023-02-13 22:41:32,907 INFO u.l.c.c.BillController [main] bill viewed: Bill(id=1, date=, totalPrice=0.00)
-2023-02-13 22:41:32,935 INFO u.l.c.c.BillController [main] bill model logged
-2023-02-13 22:41:32,961 INFO u.l.c.c.BillController [main] bill edit logged
-2023-02-13 22:41:32,997 INFO u.l.c.c.BillController [main] bill list logged: [Bill(id=1, date=, totalPrice=0.00)]
-2023-02-13 22:41:33,031 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-02-13 22:41:33,033 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-02-13 22:41:33,041 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-02-13 23:01:07,329 INFO o.s.b.StartupInfoLogger [main] Starting CategoryTest using Java 17.0.1 with PID 19369 (started by maksimlasko in /Users/maksimlasko/Desktop/Java/cafe-manager)
+2023-02-13 23:01:07,336 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.0.2, Spring v6.0.4
+2023-02-13 23:01:07,338 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-02-13 23:01:07,825 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-13 23:01:07,871 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 40 ms. Found 3 JPA repository interfaces.
+2023-02-13 23:01:08,221 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-13 23:01:08,261 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-13 23:01:08,391 WARN o.h.b.i.MetadataBuilderImpl$MetadataBuildingOptionsImpl [main] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-13 23:01:08,536 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-02-13 23:01:08,607 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2fac80a8
+2023-02-13 23:01:08,608 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-02-13 23:01:08,632 INFO o.h.e.j.d.i.DialectFactoryImpl [main] HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2023-02-13 23:01:09,365 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-13 23:01:09,373 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-13 23:01:09,682 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-13 23:01:09,991 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2023-02-13 23:01:09,991 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2023-02-13 23:01:09,994 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 1 ms
+2023-02-13 23:01:10,010 INFO o.s.b.StartupInfoLogger [main] Started CategoryTest in 3.018 seconds (process running for 3.979)
+2023-02-13 23:01:10,197 INFO u.l.c.c.CategoryController [main] category model logged
+2023-02-13 23:01:10,588 INFO u.l.c.c.CategoryController [main] category list logged: [latte]
+2023-02-13 23:01:10,646 INFO u.l.c.c.CategoryController [main] category deleted by id: 1
+2023-02-13 23:01:10,660 INFO u.l.c.c.CategoryController [main] category edit logged
+2023-02-13 23:01:10,674 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [ua.lyashko.cafe.DashboardTest]: DashboardTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-13 23:01:10,677 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration ua.lyashko.cafe.CafeApplication for test class ua.lyashko.cafe.DashboardTest
+2023-02-13 23:01:10,691 INFO u.l.c.c.DashboardController [main] dashboard model logged
+2023-02-13 23:01:10,706 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [ua.lyashko.cafe.ProductTest]: ProductTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-13 23:01:10,709 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration ua.lyashko.cafe.CafeApplication for test class ua.lyashko.cafe.ProductTest
+2023-02-13 23:01:10,744 INFO u.l.c.c.ProductController [main] product edit logged
+2023-02-13 23:01:10,800 INFO u.l.c.c.ProductController [main] product list logged: [Product(id=1, name=best latte, price=1.00)]
+2023-02-13 23:01:10,830 INFO u.l.c.c.ProductController [main] product deleted by id: 1
+2023-02-13 23:01:10,845 INFO u.l.c.c.ProductController [main] product model logged
+2023-02-13 23:01:10,860 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [ua.lyashko.cafe.BillTest]: BillTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-13 23:01:10,862 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration ua.lyashko.cafe.CafeApplication for test class ua.lyashko.cafe.BillTest
+2023-02-13 23:01:10,878 INFO u.l.c.c.BillController [main] bill deleted by id: 1
+2023-02-13 23:01:11,020 INFO u.l.c.c.BillController [main] bill exported: Bill(id=1, date=, totalPrice=0.00)
+2023-02-13 23:01:11,040 INFO u.l.c.c.BillController [main] bill viewed: Bill(id=1, date=, totalPrice=0.00)
+2023-02-13 23:01:11,065 INFO u.l.c.c.BillController [main] bill model logged
+2023-02-13 23:01:11,088 INFO u.l.c.c.BillController [main] bill edit logged
+2023-02-13 23:01:11,113 INFO u.l.c.c.BillController [main] bill list logged: [Bill(id=1, date=, totalPrice=0.00)]
+2023-02-13 23:01:11,154 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-13 23:01:11,158 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-02-13 23:01:11,165 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
