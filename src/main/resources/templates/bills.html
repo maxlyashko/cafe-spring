@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Bill</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Cafe Manager</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/dashboard}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/categories}">Manage Category</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/products}">Manage Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/bills}">Manage Bill</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<p></p>
+
+<div class="container">
+    <div class="row">
+        <h1> List of Bills</h1>
+    </div>
+
+    <style>
+        .results tr[visible='false'],
+        .no-result {
+        display: none;
+        }
+        .results tr[visible='true'] {
+        display: table-row;
+        }
+        .searchCount {
+        padding: 8px;
+        color: #ccc;
+        }
+    </style>
+
+
+    <div class="form-group has-search ">
+        <span class="fa fa-search form-control-feedback"></span>
+        <input ENGINE="text" class="searchKey" placeholder="Search">
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <a th:href="@{/bills/new}" class="btn btn-primary btn-sm mb-3">Add Bill</a>
+        </div>
+    </div>
+
+    <span class="searchCount"></span>
+    <table class="table table-striped table-bordered results text-center">
+        <thead class="table-dark">
+        <tr>
+            <th>Bill id</th>
+            <th>Bill date</th>
+            <th>Total products</th>
+            <th>Bill total price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="bill: ${bills}">
+            <td th:text="${bill.id}"></td>
+            <td th:text="${bill.date}"></td>
+            <td th:text="${bill.products.size}"></td>
+            <td th:text="${bill.totalPrice}"></td>
+            <td>
+                <a th:href="@{/bills/view/{id}(id=${bill.id})}"
+                   class = "btn btn-primary">View</a>
+                <a th:href="@{/bills/export/{id}(id=${bill.id})}"
+                   class = "btn btn-primary">Get PDF</a>
+                <a th:href="@{/bills/{id}(id=${bill.id})}"
+                   class = "btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        function createExpr(arr) {
+        var index = 0;
+        var expr = [":containsiAND('" + arr[0] + "')"];
+        for (var i = 1; i < arr.length; i++) {
+        if (arr[i] === 'AND') {
+        expr[index] += ":containsiAND('" + arr[i + 1] + "')";
+        i++;
+        } else if (arr[i] === 'OR') {
+        index++;
+        expr[index] = ":containsiOR('" + arr[i + 1] + "')";
+        i++;
+        }
+        }
+        return expr;
+        }
+        $(document).ready(function() {
+
+        $(".searchKey").keyup(function() {
+        var searchTerm = $(".searchKey").val().replace(/["']/g, "");
+        var arr = searchTerm.split(/(AND|OR)/);
+        var exprs = createExpr(arr);
+        var searchSplit = searchTerm.replace(/AND/g, "'):containsiAND('").replace(/OR/g, "'):containsiOR('");
+
+        $.extend($.expr[':'], {
+        'containsiAND': function(element, i, match, array) {
+        return (element.textContent || element.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
+        }
+        });
+
+        $('.results tbody tr').attr('visible', 'false');
+        for (var expr in exprs) {
+        $(".results tbody tr" + exprs[expr]).each(function(e) {
+        $(this).attr('visible', 'true');
+        });
+        }
+
+        var searchCount = $('.results tbody tr[visible="true"]').length;
+
+        $('.searchCount').text('Founded ' + searchCount + ' bills');
+        if (searchCount == '0') {
+        $('.no-result').show();
+        } else {
+        $('.no-result').hide();
+        }
+        if ($('.searchKey').val().length == 0) {
+        $('.searchCount').hide();
+        } else {
+        $('.searchCount').show();
+        }
+        });
+        });
+    </script>
+</div>
+</body>
+</html>

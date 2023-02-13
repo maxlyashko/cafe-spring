@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Cafe Manager</a>
+
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/dashboard}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/categories}">Manage Category</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/products}">Manage Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/bills}">Manage Bill</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<p></p>
+
+<div class="card-group text-center ">
+
+    <div class="card">
+        <h5 class="card-header">Total categories</h5>
+        <div class="card-body">
+            <h5 class="card-title">Current categories: <span th:text="${categories}"></span></h5>
+            <p class="card-text">View all categories, search by any parameter, add, edit or delete any category</p>
+            <a th:href="@{/categories}" class="btn btn-primary btn-lg">Manage Category</a>
+        </div>
+    </div>
+    <div class="card">
+        <h5 class="card-header">Total products</h5>
+        <div class="card-body">
+            <h5 class="card-title">Current products: <span th:text="${products}"></span></h5>
+            <p class="card-text">View all products, search by any parameter, add, edit or delete any product</p>
+            <a th:href="@{/products}" class="btn btn-primary btn-lg">Manage Product</a>
+        </div>
+    </div>
+    <div class="card">
+        <h5 class="card-header">Total bills</h5>
+        <div class="card-body">
+            <h5 class="card-title">Current bills: <span th:text="${bills}"></span></h5>
+            <p class="card-text">View all bills, search by any parameter, view, save PDF or delete bill by id</p>
+            <a th:href="@{/bills}" class="btn btn-primary btn-lg">Manage Bill</a>
+        </div>
+    </div>
+</div>
+
+<div class="m-5 p-5">
+    <figure>
+        <img src="https://www.gifcen.com/wp-content/uploads/2022/08/coffee-gif.gif"
+             class="rounded mx-auto d-block" alt="...">
+    </figure>
+</div>
+</body>
+</html>
+
