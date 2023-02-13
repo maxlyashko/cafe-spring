@@ -15,6 +15,11 @@
 	<description>Cafe manager project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<properties>
+			<maven.compiler.source>11</maven.compiler.source>
+			<maven.compiler.target>11</maven.compiler.target>
+			<maven.compiler.release>11</maven.compiler.release>
+		</properties>
 	</properties>
 	<dependencies>
 		<dependency>
